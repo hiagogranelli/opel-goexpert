@@ -16,9 +16,10 @@ import (
 )
 
 type ServicebResponse struct {
-	TempC float64 `json:"temp_c"`
-	TempF float64 `json:"temp_f"`
-	TempK float64 `json:"temp_k"`
+	City  string  `json:"city"`
+	TempC float64 `json:"temp_C"`
+	TempF float64 `json:"temp_F"`
+	TempK float64 `json:"temp_K"`
 }
 
 type CepInputDTO struct {
@@ -26,9 +27,10 @@ type CepInputDTO struct {
 }
 
 type CepOutputDTO struct {
-	TempC float64 `json:"temp_c"`
-	TempF float64 `json:"temp_f"`
-	TempK float64 `json:"temp_k"`
+	City  string  `json:"city"`
+	TempC float64 `json:"temp_C"`
+	TempF float64 `json:"temp_F"`
+	TempK float64 `json:"temp_K"`
 }
 
 var (

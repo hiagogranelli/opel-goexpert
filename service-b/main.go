@@ -38,6 +38,13 @@ type WeatherResponse struct {
 	} `json:"current"`
 }
 
+type ClimaResponse struct {
+	City  string  `json:"city"`
+	TempC float64 `json:"temp_C"`
+	TempF float64 `json:"temp_F"`
+	TempK float64 `json:"temp_K"`
+}
+
 func isNumeric(s string) bool {
 	_, err := strconv.Atoi(s)
 	return err == nil
@@ -125,10 +132,11 @@ func climaHandler(c *gin.Context) {
 		return
 	}
 
-	response := map[string]float64{
-		"temp_C": tempC,
-		"temp_F": tempF,
-		"temp_K": tempK,
+	response := ClimaResponse{
+		City:  localidade,
+		TempC: tempC,
+		TempF: tempF,
+		TempK: tempK,
 	}
 
 	c.JSON(http.StatusOK, response)
